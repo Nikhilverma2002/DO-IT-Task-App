@@ -475,6 +475,8 @@
     <color name="design_brown_text">#42302a</color>
     <color name="design_grey_text">#AFB7C5</color>
     <color name="design_dark_grey_text">#3F4056</color>
+    <color name="bg_color_gr">#EFEEFC</color>
+    <color name="bg_color_gr2">#5A67E0</color>
 
 
 

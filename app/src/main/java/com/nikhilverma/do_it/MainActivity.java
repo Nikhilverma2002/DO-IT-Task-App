@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity implements DialogCloseListen
             @Override
             public void onClick(View v) {
                 AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
+                lottieAnimationView.setVisibility(View.GONE);
+                textView.setVisibility(View.GONE);
             }
         });
 

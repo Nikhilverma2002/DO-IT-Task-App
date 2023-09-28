@@ -108,7 +108,6 @@ public class Create_group extends Fragment {
         });
         open_dialog_box();
 
-
         Window window = getActivity().getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(getContextNullSafety(),	R.color.glass));
@@ -231,6 +230,10 @@ public class Create_group extends Fragment {
                 else{
                     newTaskSaveButton.setEnabled(true);
                     newTaskSaveButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.blue));
+                    newTaskSaveButton.setOnClickListener(v -> {
+                        heading.setText(editText_create.getText().toString().trim().substring(0,1).toUpperCase() + editText_create.getText().toString().trim().substring(1).toLowerCase());
+                        dialog.dismiss();
+                    });
                 }
             }
 
@@ -300,18 +303,7 @@ public class Create_group extends Fragment {
             //setSubtitleIndicatorColor();
         });
 
-        if (editText_create.getText().toString().trim() != null) {
-            newTaskSaveButton.setOnClickListener(v -> {
-                heading.setText(editText_create.getText().toString().trim().substring(0,1).toUpperCase() + editText_create.getText().toString().trim().substring(1).toLowerCase());
-                dialog.dismiss();
-            /*reference = FirebaseDatabase.getInstance().getReference().child("Groups");
-            push = reference.push().getKey();
-            if (!editText_create.getText().toString().trim().equals("")){
-              //  gr_push_data();
-                dialog.dismiss();
-            }*/
-            });
-        }
+
 
         plus.setOnClickListener(v -> {
             assert getFragmentManager() != null;

@@ -3,6 +3,7 @@ package com.nikhilverma.do_it;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -22,6 +23,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,9 +37,13 @@ import com.nikhilverma.do_it.adapters.AdapterTask;
 import com.nikhilverma.do_it.Models.Model;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+
+import in.akshit.horizontalcalendar.HorizontalCalendarView;
+import in.akshit.horizontalcalendar.Tools;
 
 public class ViewTask extends Fragment {
 
@@ -59,6 +65,9 @@ public class ViewTask extends Fragment {
     FirebaseAuth auth;
     FirebaseUser user;
     ImageView exit;
+    HorizontalCalendarView calendarView;
+    Calendar starttime;
+    Calendar endtime;
 
 
     @Override
@@ -88,6 +97,28 @@ public class ViewTask extends Fragment {
         //above colour
 
 
+        //calendar view
+        calendarView = view.findViewById(R.id.calendar);
+
+        starttime = Calendar.getInstance();
+        starttime.add(Calendar.MONTH,-6);
+
+        endtime = Calendar.getInstance();
+        endtime.add(Calendar.MONTH,6);
+
+        ArrayList datesToBeColored = new ArrayList();
+        datesToBeColored.add(Tools.getFormattedDateToday());
+
+        calendarView.setUpCalendar(starttime.getTimeInMillis(),
+                endtime.getTimeInMillis(),
+                datesToBeColored,
+                new HorizontalCalendarView.OnCalendarListener() {
+                    @Override
+                    public void onDateSelected(String date) {
+                        Toast.makeText(getActivity(),date+" clicked!",Toast.LENGTH_SHORT).show();
+                    }
+                });
+
         ItemTouchHelper itemTouchHelper = new
                 ItemTouchHelper(new RecyclerItemTouchHelperGroup(grp));
         itemTouchHelper.attachToRecyclerView(recyclerView);
@@ -96,10 +127,10 @@ public class ViewTask extends Fragment {
         back.setOnClickListener(v -> {
             assert getFragmentManager() != null;
             getFragmentManager().beginTransaction().remove(ViewTask.this).commit();
-        });
 
-
-        exit.setOnClickListener(v->{
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(getContextNullSafety(), R.color.bg_color_gr));
 
         });
 
@@ -108,11 +139,13 @@ public class ViewTask extends Fragment {
             public void handleOnBackPressed() {
                 assert getFragmentManager() != null;
                 getFragmentManager().beginTransaction().remove(ViewTask.this).commit();
+
+                Window window = getActivity().getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(ContextCompat.getColor(getContextNullSafety(), R.color.bg_color_gr));
             }
         };
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(),callback);
-
-
 
         try {
             assert getArguments() != null;
@@ -160,6 +193,11 @@ public class ViewTask extends Fragment {
                 }
                 if (Objects.equals(snapshot.child("uid").getValue(), user.getUid())) {
                     delete_img.setVisibility(View.VISIBLE);
+                    exit.setVisibility(View.GONE);
+                }
+                else {
+                    delete_img.setVisibility(View.GONE);
+                    exit.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -167,6 +205,22 @@ public class ViewTask extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
+        });
+
+        add_mem.setOnClickListener(v->{
+            try {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Download App");
+                char ch = '_';
+                String message = "https://doit.android/" + title_args.replace(' ', ch) + "/" + user.getUid() + "/" +
+                        "\n\n\n https://play.google.com/store/apps/details?=" + BuildConfig.APPLICATION_ID + "\n\n";
+                intent.putExtra(Intent.EXTRA_TEXT, message);
+                getActivity().startActivity(Intent.createChooser(intent, "Share using"));
+            } catch (Exception e) {
+                Toast.makeText(getContextNullSafety(), "Error Occurred", Toast.LENGTH_SHORT).show();
+            }
+
         });
 
         exit.setOnClickListener(c->{
@@ -196,7 +250,8 @@ public class ViewTask extends Fragment {
         delete.setOnClickListener(v -> {
             //finish();
             reference.removeValue();
-            getActivity();
+            assert getFragmentManager() != null;
+            getFragmentManager().beginTransaction().remove(ViewTask.this).commit();
             dialog.dismiss();
 
         });
@@ -216,8 +271,9 @@ public class ViewTask extends Fragment {
         delete.setOnClickListener(v -> {
             //finish();
             //TODO: remove from group or exit
-            reference.child("members").child(user.getUid()).child(user.getUid()).removeValue();
-            getActivity();
+            reference.child("member").child(user.getUid()).removeValue();
+            assert getFragmentManager() != null;
+            getFragmentManager().beginTransaction().remove(ViewTask.this).commit();
             dialog.dismiss();
 
         });

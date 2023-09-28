@@ -102,7 +102,7 @@ public class GroupTask extends AppCompatActivity {
         //white upper
         Window window = GroupTask.this.getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.setStatusBarColor(ContextCompat.getColor(GroupTask.this, R.color.white));
+        window.setStatusBarColor(ContextCompat.getColor(GroupTask.this, R.color.bg_color_gr));
         reference_name = FirebaseDatabase.getInstance().getReference().child("users");
 
 

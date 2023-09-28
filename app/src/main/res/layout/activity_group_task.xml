@@ -5,7 +5,7 @@
     android:id="@+id/group_task_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/bg_color_gr"
     tools:context=".GroupTask">
 
     <LinearLayout
@@ -65,35 +65,34 @@
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/layout_group_task" />
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
         app:activeItem="1"
-        app:backgroundColor="#d9f1ff"
+        app:backgroundColor="#5A67E0"
         app:iconSize="18dp"
-        app:iconTint="@color/PURPLE"
-        app:iconTintActive="@color/PURPLE"
-        app:indicatorColor="@color/white"
-        app:indicatorRadius="10dp"
-        app:itemFontFamily="@font/quicksand_light"
+        app:iconTint="@color/white"
+        app:iconTintActive="@color/white"
+        app:itemFontFamily="@font/quicksand"
         app:itemPadding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/main"
         app:sideMargins="5dp"
-        app:textColor="@color/PURPLE"
+        app:textColor="@color/white"
         app:textSize="12sp" />
 
     <com.airbnb.lottie.LottieAnimationView
@@ -133,7 +132,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="8dp"
         android:foregroundGravity="center"
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"

@@ -52,11 +52,13 @@ public class AdapterGroup extends RecyclerView.Adapter<AdapterGroup.ViewHolder> 
         return new ViewHolder(view);
     }
 
+
+
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull AdapterGroup.ViewHolder holder, int position) {
 
-
+        reference = FirebaseDatabase.getInstance().getReference().child("Groups").child(list.get(position).getTitle());
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
         reference_ret = FirebaseDatabase.getInstance().getReference().child("Groups");
@@ -88,7 +90,7 @@ public class AdapterGroup extends RecyclerView.Adapter<AdapterGroup.ViewHolder> 
         });
 
         if (list.get(position).getTitle() != null) {
-            reference = FirebaseDatabase.getInstance().getReference().child("Groups").child(list.get(position).getTitle());
+
             reference.child("member").addValueEventListener(new ValueEventListener() {
                 @SuppressLint("SetTextI18n")
                 @Override
@@ -111,10 +113,6 @@ public class AdapterGroup extends RecyclerView.Adapter<AdapterGroup.ViewHolder> 
 
 
         holder.share.setOnClickListener(v -> {
-            /*Intent shareIntent = new Intent(Intent.ACTION_SEND);
-            shareIntent.setType("text/plain");
-            shareIntent.putExtra(Intent.EXTRA_TEXT, message );
-            context.startActivity(Intent.createChooser(shareIntent, "Share link using"));*/
 
             try {
                 Intent intent = new Intent(Intent.ACTION_SEND);
@@ -140,7 +138,6 @@ public class AdapterGroup extends RecyclerView.Adapter<AdapterGroup.ViewHolder> 
                 float percentage = (float) ((count * 100) / total_childs);
                 int percent = (int) percentage;
                 String str_per = percent + "%";
-                Log.e("testing_x",str_per);
                 holder.text_view_progress.setText(str_per);
                 holder.progress_bar.setProgress(percent);
             }

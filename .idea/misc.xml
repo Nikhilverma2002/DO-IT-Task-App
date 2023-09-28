@@ -55,10 +55,36 @@
         <entry key="..\:/Users/91626/AndroidStudioProjects/DOIT2/app/src/main/res/layout/task_layout.xml" value="0.25" />
         <entry key="..\:/Users/91626/AndroidStudioProjects/DOIT2/app/src/main/res/menu/main.xml" value="0.25" />
         <entry key="..\:/Users/91626/AndroidStudioProjects/DOIT2/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/background_dialog.xml" value="0.203" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/bg_cancel.xml" value="0.1885" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/bg_grp_card_adapter.xml" value="0.121" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/bg_join.xml" value="0.1705" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/bg_task.xml" value="0.1705" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/circle_progress.xml" value="0.1705" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/ic_add.xml" value="0.1705" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/ic_done.xml" value="0.1705" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/ic_hastag.xml" value="0.18" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/drawable/login_bg.xml" value="0.1885" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/activity_group_task.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/bg_task_layout.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/dialog_friend.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/dialog_new_group.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/fragment_create_group.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/fragment_new_view_task.xml" value="0.4" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/fragment_view_task.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/gr_task_layout.xml" value="0.39918809201623817" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/layout_delete_note.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/layout_group_task.xml" value="0.536" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/notification_layout.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/nikhi/Desktop/task app/app/src/main/res/layout/task_layout.xml" value="0.25" />
+        <entry key="..\:/Users/nikhi/OneDrive/Desktop/task app/app/src/main/res/layout/gr_task_layout.xml" value="0.23489583333333333" />
+        <entry key="..\:/Users/nikhi/OneDrive/Desktop/task app/app/src/main/res/layout/layout_group_task.xml" value="0.2359375" />
+        <entry key="..\:/Users/nikhi/OneDrive/Desktop/task app/app/src/main/res/layout/notification_layout.xml" value="0.1875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -96,6 +96,9 @@ public class NewViewTask extends BottomSheetDialogFragment {
         layoutTime = view.findViewById(R.id.layout_time);
         layoutDate = view.findViewById(R.id.layout_date);
 
+        editText = view.findViewById(R.id.edit_text_view_task);
+        save = view.findViewById(R.id.view_save);
+        reference = FirebaseDatabase.getInstance().getReference().child("Groups");
         boolean isUpdate = false;
 
         /*boolean isUpdate = false;
@@ -178,9 +181,7 @@ public class NewViewTask extends BottomSheetDialogFragment {
                 timePickerDialog.show();
             });
 
-            editText = view.findViewById(R.id.edit_text_view_task);
-            save = view.findViewById(R.id.view_save);
-            reference = FirebaseDatabase.getInstance().getReference().child("Groups");
+
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {

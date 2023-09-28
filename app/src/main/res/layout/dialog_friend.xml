@@ -18,7 +18,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/quicksand_bold"
         android:includeFontPadding="false"
-        android:text="Add Friend"
+        android:text="@string/join_group"
         android:textColor="@color/red_dif"
         android:textSize="@dimen/_13ssp"
         app:layout_constraintEnd_toEndOf="parent"

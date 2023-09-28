@@ -6,20 +6,22 @@
     android:layout_marginStart="20dp"
     android:layout_marginEnd="20dp"
     android:layout_gravity="center"
+    android:padding="20dp"
     android:id="@+id/layout_dialog"
-    android:background="@color/white"
+    android:background="@drawable/background_dialog"
     android:layout_height="wrap_content">
 
     <EditText
         android:id="@+id/create_group"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:layout_marginTop="15dp"
         android:ems="10"
+        android:paddingStart="15dp"
         android:maxLength="17"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_search"
         android:textColor="@color/grey_900"
-        android:inputType="textPersonName"
+        android:inputType="textCapWords"
         android:padding="10dp"
         android:textColorHint="@color/grey_500"
         android:hint="@string/enter_title"
@@ -32,7 +34,8 @@
         android:id="@+id/layoutNoteColor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/create_group"
@@ -57,7 +60,7 @@
                 android:contentDescription="@string/app_name"
                 android:padding="10dp"
                 android:src="@drawable/ic_done"
-                app:tint="@color/colorWhite" />
+                />
 
 
         </FrameLayout>
@@ -79,7 +82,7 @@
                 android:layout_height="35dp"
                 android:contentDescription="@string/app_name"
                 android:padding="10dp"
-                app:tint="@color/colorWhite" />
+                />
 
 
         </FrameLayout>
@@ -101,7 +104,7 @@
                 android:layout_height="35dp"
                 android:contentDescription="@string/app_name"
                 android:padding="10dp"
-                app:tint="@color/colorWhite" />
+                 />
 
 
         </FrameLayout>
@@ -122,8 +125,7 @@
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:contentDescription="@string/app_name"
-                android:padding="10dp"
-                app:tint="@color/colorWhite" />
+                android:padding="10dp" />
 
 
         </FrameLayout>
@@ -145,7 +147,7 @@
                 android:layout_height="35dp"
                 android:contentDescription="@string/app_name"
                 android:padding="10dp"
-                app:tint="@color/colorWhite" />
+                 />
         </FrameLayout>
 
 
@@ -154,34 +156,12 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_medium"
             android:includeFontPadding="false"
-            android:text="Pick Color"
+            android:text="@string/pick_color"
             android:textColor="@color/orange"
             android:textSize="13sp" />
 
 
     </LinearLayout>
-
-
-<!--
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/layoutNoteColor"
-        app:layout_constraintStart_toStartOf="@+id/layoutNoteColor"
-        app:layout_constraintTop_toBottomOf="@+id/layoutNoteColor">
-
-        <com.rtugeek.android.colorseekbar.ColorSeekBar
-            android:id="@+id/colorSlider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:barHeight="@dimen/_8sdp"
-            app:colorSeeds="@array/material_colors" />
-
-    </LinearLayout>
--->
 
 
     <TextView
@@ -190,32 +170,27 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/quicksand_medium"
         android:includeFontPadding="false"
-        android:text="Create Group"
+        android:text="@string/create_group"
         android:textColor="@color/grey_500"
         android:textSize="15sp"
-        android:paddingBottom="15dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/layoutNoteColor"
-        app:layout_constraintTop_toBottomOf="@+id/layoutNoteColor"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/cancel_list" />
 
 
     <TextView
         android:id="@+id/cancel_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/quicksand_medium"
-        android:includeFontPadding="false"
-        android:layout_marginTop="20dp"
-        android:paddingBottom="15dp"
-        android:text="Cancel"
+        android:text="@string/cancel"
         android:textColor="@color/red_500"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/create_list"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/create_list"
         app:layout_constraintTop_toBottomOf="@+id/layoutNoteColor"
-        app:layout_constraintVertical_bias="0.0" />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

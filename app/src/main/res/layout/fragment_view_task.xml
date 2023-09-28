@@ -40,6 +40,7 @@
             android:id="@+id/exit_group"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:visibility="gone"
             android:layout_marginStart="12dp"
             android:src="@drawable/ic_exit" />
 
@@ -88,7 +89,6 @@
         android:id="@+id/group_heading"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/quicksand_bold"
         android:layout_marginStart="18dp"
@@ -101,27 +101,35 @@
         android:id="@+id/group_date_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:fontFamily="@font/quicksand_medium"
-        android:textSize="17sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="@+id/group_heading"
         app:layout_constraintStart_toStartOf="@+id/group_heading"
         app:layout_constraintTop_toBottomOf="@+id/group_heading" />
+
+
+    <in.akshit.horizontalcalendar.HorizontalCalendarView
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_date_view" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_date_view"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/calendar" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/frag_plus_view_task"
